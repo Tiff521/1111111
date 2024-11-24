@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>通讯录管理</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- 引入 SheetJS 库用于导入导出 Excel -->
+    <script src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script>
+</head>
+<body>
+    <h1>通讯录管理</h1>
+    <div class="container">
+        <!-- 添加/修改联系人表单 -->
+        <div class="form-container">
+            <h2>添加/修改联系人</h2>
+            <form id="contactForm">
+                <input type="hidden" id="contactId">
+                <label for="name">姓名:</label>
+                <input type="text" id="name" required>
+
+                <label>联系方式:</label>
+                <div id="contactMethodsContainer"></div>
+                <button type="button" onclick="addContactMethodInput()">添加联系方式</button>
+
+                <button type="submit">保存</button>
+            </form>
+        </div>
+
+        <!-- 搜索框 -->
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="搜索联系人..." oninput="filterContacts()">
+        </div>
+
+        <!-- 联系人列表 -->
+        <div class="list-container">
+            <h2>联系人列表</h2>
+
+            <!-- 导入和导出按钮 -->
+            <div class="action-buttons">
+                <button class="export-button" onclick="exportToExcel()">导出联系人</button>
+                <label for="importExcel" class="import-label">导入联系人</label>
+                <input type="file" id="importExcel" accept=".xlsx, .xls" onchange="importFromExcel()" style="display: none;">
+            </div>
+
+            <table id="contactsTable">
+                <thead>
+                    <tr>
+                        <th>姓名</th>
+                        <th>联系方式</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody id="contactsBody">
+                    <!-- 联系人将动态添加到这里 -->
+                </tbody>
+            </table>
+        </div>
+
+        <!-- 收藏列表 -->
+        <div class="favorites-container">
+            <h2>收藏的联系人</h2>
+            <table id="favoritesTable">
+                <thead>
+                    <tr>
+                        <th>姓名</th>
+                        <th>联系方式</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody id="favoritesBody">
+                    <!-- 收藏联系人将动态添加到这里 -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
