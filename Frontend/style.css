@@ -1,0 +1,241 @@
+/* 全局样式 */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f3f4f6;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    color: #444;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+    font-size: 24px;
+}
+
+/* 容器样式 */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 90%;
+    max-width: 800px;
+}
+
+.form-container, .list-container, .favorites-container {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+}
+
+/* 表单样式 */
+.form-container h2 {
+    margin-bottom: 15px;
+    color: #555;
+    font-size: 18px;
+    border-bottom: 2px solid #4a90e2;
+    padding-bottom: 5px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+label {
+    font-weight: bold;
+    color: #666;
+}
+
+input[type="text"],
+input[type="email"],
+select {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    outline: none;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+select:focus {
+    border-color: #4a90e2;
+    box-shadow: 0px 0px 5px rgba(74, 144, 226, 0.3);
+}
+
+button[type="submit"],
+button[type="button"] {
+    background-color: #4a90e2;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+button[type="submit"]:hover,
+button[type="button"]:hover {
+    background-color: #357ab8;
+}
+
+/* 动态联系方式容器 */
+#contactMethodsContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.contact-method {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.contact-method select {
+    flex: 1;
+}
+
+.contact-method input {
+    flex: 2;
+}
+
+.contact-method button {
+    background-color: #e74c3c;
+    color: white;
+    padding: 6px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.contact-method button:hover {
+    background-color: #c0392b;
+}
+
+/* 表格样式 */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+thead {
+    background-color: #f3f4f6;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    color: #666;
+    font-weight: bold;
+}
+
+td {
+    color: #333;
+}
+
+button {
+    padding: 6px 10px;
+    margin: 0 2px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+button:first-child {
+    background-color: #4a90e2;
+    color: white;
+}
+
+button:last-child {
+    background-color: #e74c3c;
+    color: white;
+}
+
+/* 导出和导入按钮样式 */
+.export-button, .import-button {
+    padding: 8px 12px;
+    background-color: #4a90e2;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.export-button:hover, .import-button:hover {
+    background-color: #357ab8;
+}
+
+.action-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+/* 收藏列表样式 */
+.favorites-container {
+    margin-top: 20px;
+    background-color: #fff8e1;
+    border: 1px solid #ffeb3b;
+    border-radius: 8px;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.favorites-container h2 {
+    color: #f39c12;
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.favorites-container table {
+    background-color: #fffbea;
+    border-radius: 4px;
+}
+
+.favorites-container th, .favorites-container td {
+    border-bottom: 1px solid #ffd54f;
+}
+
+.favorites-container th {
+    color: #ff9800;
+}
+
+.favorites-container td {
+    color: #795548;
+}
+
+/* 输入框提示文本颜色 */
+input::placeholder {
+    color: #999;
+}
+
+/* 页面适配 */
+@media (max-width: 600px) {
+    .container {
+        width: 100%;
+        padding: 10px;
+    }
+}
